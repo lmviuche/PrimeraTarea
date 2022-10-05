@@ -8,6 +8,7 @@ import sys
 #CÓDIGO: 20212020082
 #FECHA: 04 OCT 2022
 
+
 #PRIMERA PREGUNTA
 def calcular_area_triangulo():
 
@@ -22,8 +23,10 @@ def calcular_area_triangulo():
 
   return area_triangulo(l, h)
 
+
 #Quite el comentario para probar la función
 #calcular_area_triangulo()
+
 
 #SEGUNDA PREGUNTA
 def max_min_de_una_lista():
@@ -37,8 +40,10 @@ def max_min_de_una_lista():
   return print("El número máximo de la lista es:", max(lista),
                "y el número mínimo es:", min(lista))
 
+
 #Quite el comentario para probar la función
 #max_min_de_una_lista()
+
 
 #TERCER PREGUNTA
 def euler_sin_recursividad():
@@ -55,15 +60,18 @@ def euler_sin_recursividad():
 
   return print("Sin recursividad:", c)
 
+
 def factorial(n):
   if n > 1:
     return n * factorial(n - 1)
   return 1
 
+
 def euler_con_recursividad(n):
   if n > 1:
     return n / factorial(n) + euler_con_recursividad(n - 1)
   return 1
+
 
 #La diferencia la forma recursiva permite que un bloque de instrucciones se ejecute un
 #cierto número de veces. Esta cantidad de veces la realizamos llamando a la misma función
@@ -74,49 +82,52 @@ def euler_con_recursividad(n):
 #euler_sin_recursividad()
 #print(euler_con_recursividad(50))
 
+
 #CUARTA PREGUNTA
 def gaus_jordan():
-  
+
   #Leer el número de incógnitas
   n = int(input('Ingrese el número de incognitas: '))
-  
-  #Creación de un arrglo con numpy de tamaño n x n+1 
+
+  #Creación de un arrglo con numpy de tamaño n x n+1
   #inicializado en 0 para almacenar la matriz aumentada
-  a = np.zeros((n,n+1))
-  
+  a = np.zeros((n, n + 1))
+
   #Creación de un arreglo con numpy de tamaño n
   #inicializado en zero para almacenar el vector solución
   x = np.zeros(n)
-  
+
   #Leer los coeficientes de la matriz
   print('Ingresar los coeficientes de la matriz:')
   for i in range(n):
-      for j in range(n+1):
-          a[i][j] = float(input( 'a['+str(i)+']['+ str(j)+']='))
-  
+    for j in range(n + 1):
+      a[i][j] = float(input('a[' + str(i) + '][' + str(j) + ']='))
+
   #Aplicación del método Gauss-Jordan
   for i in range(n):
-      if a[i][i] == 0.0:
-          sys.exit('Error... se encontró una división por cero')
-          
-      for j in range(n):
-          if i != j:
-              ratio = a[j][i]/a[i][i]
-  
-              for k in range(n+1):
-                  a[j][k] = a[j][k] - ratio * a[i][k]
-  
-  #Se obtiene la solución 
-  
+    if a[i][i] == 0.0:
+      sys.exit('Error... se encontró una división por cero')
+
+    for j in range(n):
+      if i != j:
+        ratio = a[j][i] / a[i][i]
+
+        for k in range(n + 1):
+          a[j][k] = a[j][k] - ratio * a[i][k]
+
+  #Se obtiene la solución
+
   for i in range(n):
-      x[i] = a[i][n]/a[i][i]
+    x[i] = a[i][n] / a[i][i]
   print('\nLa solución requerida es: ')
   for i in range(n):
-      print('X%d = %0.2f' %(i,x[i]), end = '\t')
+    print('X%d = %0.2f' % (i, x[i]), end='\t')
+
 
 #Quite el comentario para probar el código
 #gaus_jordan()
-    
+
+
 #QUINTA PREGUNTA
 def hallar_integral():
 
@@ -139,6 +150,7 @@ def hallar_integral():
   acum = acum * T
 
   print("El resultado aproximado es: ", acum)
+
 
 #Quite el comentario para probar la función
 #hallar_integral()
